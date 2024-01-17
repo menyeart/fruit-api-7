@@ -1,7 +1,11 @@
 class FruitsController < ApplicationController
 
   def index
-    @fruit = FruitsFacade.new(params["search"]).create_fruit_obj
+    @fruit = FruitsFacade.new.create_fruit_obj
+  end
+
+  def similar_fruits
+    @similar_fruits = FruitsFacade.new().create_similar_fruits(params["nutrition"]["calories"])
   end
 
 end
