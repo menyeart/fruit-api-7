@@ -12,6 +12,10 @@ class FruitService
     get_url("/api/fruit/all")
   end
 
+  def similar_fruits(calories)
+    get_url("/api/fruit/calories?min=#{calories.to_i - 30}&max=#{calories.to_i + 30}")
+  end
+
 
   def get_url(url)
     response =  conn.get(url)

@@ -22,4 +22,14 @@ RSpec.describe "FruitService" do
     expect(fruits.first).to be_a(Hash)
     expect(fruits.first.keys).to eq(fruit_keys)
   end
+
+  it "gets fruits with similar amounts of calories" do
+    service = FruitService.new
+    sim_fruits = service.similar_fruits(100)
+    fruit_keys = [:name, :id, :family, :order, :genus, :nutritions]
+
+    expect(sim_fruits).to be_a(Array)
+    expect(sim_fruits.first).to be_a(Hash)
+    expect(sim_fruits.first.keys).to eq(fruit_keys)
+  end
 end

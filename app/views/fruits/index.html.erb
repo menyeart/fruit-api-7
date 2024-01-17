@@ -4,3 +4,5 @@
 <p>Family: <%= @fruit.family %></p>
 <p>Genus: <%= @fruit.genus %></p>
 <p>Order: <%= @fruit.order %></p>
+<p>Nutritional Values: <%= @fruit.nutrition_info %></p>
+<%=link_to "Find Similar Fruits by Nutrition Value", fruits_nutritional_path(:nutrition => @fruit.nutrition_info), method: :get %>
