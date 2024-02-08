@@ -18,20 +18,6 @@ RSpec.describe "Root Page", type: :feature do
       expect(page).to have_content("Genus: Musa")
       expect(page).to have_content("Name: Banana")
       expect(page).to have_content("Order: Zingiberales")
-
-
-
-    # - name
-    # - family
-    # - order
-    # - genus
-    # - nutrition value, organized as: 
-    #   "Calories: x
-    #   Fat: x
-    #   Sugar: x
-    #   Carbohydrates: x
-    #   Protein: x
-    #   "
     end
   end
 end
