@@ -1,19 +1,19 @@
 class FruitsFacade
   attr_reader :fruit_name
-  def initialize(fruit_name = "banana")
-    @fruit_name = fruit_name.downcase.capitalize
+  def initialize
   end
 
   def all_fruits
     FruitService.new.all_fruits
   end
 
-  def get_fruit
-    all_fruits.find { |fruit| fruit[:name] == @fruit_name }
+  def get_fruit(fruit_name)
+    fruit_name = fruit_name.downcase.capitalize 
+    all_fruits.find { |fruit| fruit[:name] == fruit_name }
   end
 
-  def create_fruit_obj
-    Fruit.new(get_fruit)
+  def create_fruit_obj(fruit_name)
+    Fruit.new(get_fruit(fruit_name))
   end
 
   def get_similar_fruits(calories)
